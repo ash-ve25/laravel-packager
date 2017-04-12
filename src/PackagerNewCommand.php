@@ -102,9 +102,9 @@ class PackagerNewCommand extends Command
             $this->helper->makeDir($path.$vendor.'/Views');
         $bar->advance();
 
-        $this->info('Creating routes file...');
-            \Storage::put($path.$vendor.'/routes.php','');
-        $bar->advance();
+        // $this->info('Creating routes file...');
+        //     \Storage::put($path.$vendor.'/routes.php','');
+        // $bar->advance();
         
         // Get the skeleton repo from the PHP League
         $this->info('Downloading skeleton...');
