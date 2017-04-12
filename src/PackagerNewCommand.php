@@ -90,6 +90,22 @@ class PackagerNewCommand extends Command
             $this->helper->makeDir($path.$vendor);
         $bar->advance();
 
+        $this->info('Creating Controllers directory...');
+            $this->helper->makeDir($path.$vendor.'/Controllers');
+        $bar->advance();
+
+        $this->info('Creating Models directory...');
+            $this->helper->makeDir($path.$vendor.'/Models');
+        $bar->advance();
+
+        $this->info('Creating Views directory...');
+            $this->helper->makeDir($path.$vendor.'/Views');
+        $bar->advance();
+
+        $this->info('Creating routes file...');
+            \Storage::put($path.$vendor.'/routes.php','');
+        $bar->advance();
+        
         // Get the skeleton repo from the PHP League
         $this->info('Downloading skeleton...');
             $this->helper->download($zipFile = $this->helper->makeFilename(), 'http://github.com/thephpleague/skeleton/archive/master.zip')
